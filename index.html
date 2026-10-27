@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Painel P75 — Rayanne Oliveira</title>
+<style>
+  :root {
+    --tinta: #1a1a1a;
+    --tinta-fraca: #6b6b6b;
+    --fundo: #f8f6f1;
+    --papel: #ffffff;
+    --coral: #eb615e;
+    --verde: #2f7a3e;
+    --amarelo: #c48a0a;
+    --vermelho: #b03a2e;
+    --borda: #e4ddd0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--fundo); color: var(--tinta); font-family: Georgia, 'Times New Roman', serif; }
+  body { padding: 48px 56px 72px; max-width: 1280px; margin: 0 auto; }
+  header.topo { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--borda); padding-bottom: 24px; margin-bottom: 40px; }
+  header.topo h1 { font-size: 36px; font-weight: 400; margin: 0; letter-spacing: -0.02em; }
+  header.topo h1 strong { color: var(--coral); font-weight: 700; }
+  header.topo .meta { font-size: 13px; color: var(--tinta-fraca); text-align: right; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .faixa-banda { display: flex; gap: 48px; align-items: baseline; margin-bottom: 48px; padding: 24px 0; }
+  .faixa-banda .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tinta-fraca); }
+  .faixa-banda .valor { font-size: 72px; font-weight: 700; color: var(--coral); line-height: 1; font-family: Georgia, serif; }
+  .faixa-banda .meta-p75 { font-size: 16px; color: var(--tinta-fraca); }
+  .faixa-banda .meta-p75 strong { color: var(--tinta); font-weight: 700; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tinta-fraca); font-weight: 500; margin: 32px 0 16px; border-top: 1px solid var(--borda); padding-top: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .card { background: var(--papel); border: 1px solid var(--borda); padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .card header { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 0; border: none; }
+  .card h3 { font-size: 13px; font-weight: 500; margin: 0; color: var(--tinta); font-family: ui-sans-serif, system-ui, sans-serif; }
+  .card .numero { font-size: 40px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .card .legenda { display: flex; justify-content: space-between; font-size: 11px; color: var(--tinta-fraca); font-family: ui-monospace, Menlo, monospace; }
+  .card .barra { height: 4px; background: var(--borda); position: relative; }
+  .card .preencher { height: 100%; background: var(--tinta); }
+  .card.ok .preencher { background: var(--verde); }
+  .card.projetado .preencher { background: var(--amarelo); }
+  .card.falha .preencher { background: var(--vermelho); }
+  .card .gap { font-size: 11px; color: var(--tinta-fraca); font-family: ui-monospace, Menlo, monospace; }
+  .card.ok .gap { color: var(--verde); }
+  .card.falha .gap { color: var(--vermelho); }
+  .selo-ok, .selo-projetado, .selo-falha { font-size: 9px; letter-spacing: 0.1em; font-family: ui-monospace, Menlo, monospace; padding: 2px 6px; border: 1px solid; font-weight: 700; }
+  .selo-ok { color: var(--verde); border-color: var(--verde); }
+  .selo-projetado { color: var(--amarelo); border-color: var(--amarelo); }
+  .selo-falha { color: var(--vermelho); border-color: var(--vermelho); }
+  .dias { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 16px; }
+  .dia { background: var(--papel); border: 1px solid var(--borda); padding: 16px 12px; }
+  .dia.vazio { opacity: 0.3; }
+  .dia-rotulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta-fraca); margin-bottom: 10px; font-family: ui-monospace, Menlo, monospace; }
+  .dia-metrica { display: flex; justify-content: space-between; font-size: 11px; font-family: ui-monospace, Menlo, monospace; margin: 3px 0; }
+  .dia-metrica span { color: var(--tinta-fraca); }
+  .dia-metrica strong { font-weight: 700; }
+  footer.rodape { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--borda); font-size: 11px; color: var(--tinta-fraca); font-family: ui-monospace, Menlo, monospace; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header class="topo">
+    <h1>Painel <strong>P75</strong></h1>
+    <div class="meta">
+      <div>Rayanne Oliveira · BackOffice Franquias</div>
+      <div>Semana 2026-W44 · 23/10 17h → 30/10 17h</div>
+      <div>Atualizado 27/10/2026 10:30 · 53% da semana rodado</div>
+    </div>
+  </header>
+
+  <section class="faixa-banda">
+    <div>
+      <div class="label">Banda atual</div>
+      <div class="valor">— abaixo de P25</div>
+    </div>
+    <div class="meta-p75">
+      Meta é cumprir <strong>todos</strong> os mínimos de P25, P50 e P75 (régua estrita, versão 2026-10-08-bandas-v3).
+    </div>
+  </section>
+
+  <h2>Métricas vs P75</h2>
+  <div class="grid">
+    
+        <article class="card falha">
+          <header>
+            <h3>Tokens de saída</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">478.5k</div>
+          <div class="legenda">
+            <span>projeção <strong>898.0k</strong></span>
+            <span>meta P75 <strong>15.00M</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:3%"></div></div>
+          <div class="gap">faltam 14.52M</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Sessões iniciadas</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">9</div>
+          <div class="legenda">
+            <span>projeção <strong>16</strong></span>
+            <span>meta P75 <strong>84</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:10%"></div></div>
+          <div class="gap">faltam 75</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Mensagens</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">148</div>
+          <div class="legenda">
+            <span>projeção <strong>277</strong></span>
+            <span>meta P75 <strong>600</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:24%"></div></div>
+          <div class="gap">faltam 452</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Skills novas</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">1</div>
+          <div class="legenda">
+            <span>projeção <strong>1</strong></span>
+            <span>meta P75 <strong>6</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:16%"></div></div>
+          <div class="gap">faltam 5</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Linhas em sistemas</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">1.6k</div>
+          <div class="legenda">
+            <span>projeção <strong>3.0k</strong></span>
+            <span>meta P75 <strong>15.0k</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:10%"></div></div>
+          <div class="gap">faltam 13.4k</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Linhas em agentes</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">0</div>
+          <div class="legenda">
+            <span>projeção <strong>0</strong></span>
+            <span>meta P75 <strong>15.0k</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:0%"></div></div>
+          <div class="gap">faltam 15.0k</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Cron jobs</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">0</div>
+          <div class="legenda">
+            <span>projeção <strong>0</strong></span>
+            <span>meta P75 <strong>2</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:0%"></div></div>
+          <div class="gap">faltam 2</div>
+        </article>
+        <article class="card falha">
+          <header>
+            <h3>Workflows</h3>
+            <span class="selo-falha">FALHA</span>
+          </header>
+          <div class="numero">0</div>
+          <div class="legenda">
+            <span>projeção <strong>0</strong></span>
+            <span>meta P75 <strong>20</strong></span>
+          </div>
+          <div class="barra"><div class="preencher" style="width:0%"></div></div>
+          <div class="gap">faltam 20</div>
+        </article>
+  </div>
+
+  <h2>Por dia (semana corrente)</h2>
+  <div class="dias">
+    
+        <div class="dia ativo">
+          <div class="dia-rotulo">fri 23/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>97.1k</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>2</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>31</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
+        </div>
+        <div class="dia vazio">
+          <div class="dia-rotulo">sat 24/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
+        </div>
+        <div class="dia vazio">
+          <div class="dia-rotulo">sun 25/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
+        </div>
+        <div class="dia ativo">
+          <div class="dia-rotulo">mon 26/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>331.6k</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>5</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>106</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>1.3k</strong></div>
+        </div>
+        <div class="dia ativo">
+          <div class="dia-rotulo">tue 27/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>49.8k</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>2</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>11</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>319</strong></div>
+        </div>
+        <div class="dia vazio">
+          <div class="dia-rotulo">wed 28/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
+        </div>
+        <div class="dia vazio">
+          <div class="dia-rotulo">thu 29/10</div>
+          <div class="dia-metrica"><span>tok</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>0</strong></div>
+          <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
+        </div>
+  </div>
+
+  <footer class="rodape">
+    <div>Gerado por ~/scripts/painel-p75/gerar_painel.py</div>
+    <div>Fonte: coletor de uso-ia (Seazone)</div>
+  </footer>
+</body>
+</html>
