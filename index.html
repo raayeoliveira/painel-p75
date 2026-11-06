@@ -55,6 +55,11 @@
   .dia-metrica strong { font-weight: 700; }
   footer.rodape { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--borda); font-size: 11px; color: var(--tinta-fraca); font-family: ui-monospace, Menlo, monospace; display: flex; justify-content: space-between; }
   .banner-reset { background: var(--coral); color: #fff; font-family: ui-monospace, Menlo, monospace; font-size: 13px; padding: 12px 20px; margin-bottom: 32px; letter-spacing: 0.03em; }
+  .nota-metrica { border: 1px solid var(--borda); background: var(--papel); padding: 16px 20px; margin-top: 16px; font-size: 12px; line-height: 1.7; color: var(--tinta); font-family: ui-monospace, Menlo, monospace; }
+  .nota-metrica strong { font-weight: 700; }
+  .nota-metrica em { font-style: italic; }
+  .nota-metrica span { color: var(--tinta-fraca); }
+  .nota-fraca { color: var(--tinta-fraca); }
 </style>
 </head>
 <body>
@@ -64,7 +69,7 @@
     <div class="meta">
       <div>Rayanne Oliveira · BackOffice Franquias</div>
       <div>Semana 2026-W45 · 30/10 17h → 06/11 17h</div>
-      <div>Atualizado 06/11/2026 14:07 · 98% da semana rodado</div>
+      <div>Atualizado 06/11/2026 16:03 · 99% da semana rodado</div>
     </div>
   </header>
 
@@ -86,35 +91,35 @@
             <h3>Tokens de saída</h3>
             <span class="selo-falha">FALHA</span>
           </header>
-          <div class="numero">3.11M</div>
+          <div class="numero">3.27M</div>
           <div class="legenda">
-            <span>projeção <strong>3.16M</strong></span>
+            <span>projeção <strong>3.28M</strong></span>
             <span>meta P75 <strong>15.00M</strong></span>
           </div>
-          <div class="barra"><div class="preencher" style="width:20%"></div></div>
-          <div class="gap">faltam 11.89M</div>
+          <div class="barra"><div class="preencher" style="width:21%"></div></div>
+          <div class="gap">faltam 11.73M</div>
         </article>
         <article class="card falha">
           <header>
             <h3>Sessões iniciadas</h3>
             <span class="selo-falha">FALHA</span>
           </header>
-          <div class="numero">65</div>
+          <div class="numero">69</div>
           <div class="legenda">
-            <span>projeção <strong>66</strong></span>
+            <span>projeção <strong>69</strong></span>
             <span>meta P75 <strong>84</strong></span>
           </div>
-          <div class="barra"><div class="preencher" style="width:77%"></div></div>
-          <div class="gap">faltam 19</div>
+          <div class="barra"><div class="preencher" style="width:82%"></div></div>
+          <div class="gap">faltam 15</div>
         </article>
         <article class="card ok">
           <header>
             <h3>Mensagens</h3>
             <span class="selo-ok">OK</span>
           </header>
-          <div class="numero">679</div>
+          <div class="numero">699</div>
           <div class="legenda">
-            <span>projeção <strong>690</strong></span>
+            <span>projeção <strong>702</strong></span>
             <span>meta P75 <strong>600</strong></span>
           </div>
           <div class="barra"><div class="preencher" style="width:100%"></div></div>
@@ -133,27 +138,27 @@
           <div class="barra"><div class="preencher" style="width:100%"></div></div>
           <div class="gap">cumprido</div>
         </article>
-        <article class="card falha">
+        <article class="card ok">
           <header>
-            <h3>Linhas em sistemas</h3>
-            <span class="selo-falha">FALHA</span>
+            <h3>Linhas de sistema (TeamZone)</h3>
+            <span class="selo-ok">OK</span>
           </header>
-          <div class="numero">8.6k</div>
+          <div class="numero">75.8k</div>
           <div class="legenda">
-            <span>projeção <strong>8.8k</strong></span>
+            <span>projeção <strong>76.2k</strong></span>
             <span>meta P75 <strong>15.0k</strong></span>
           </div>
-          <div class="barra"><div class="preencher" style="width:57%"></div></div>
-          <div class="gap">faltam 6.4k</div>
+          <div class="barra"><div class="preencher" style="width:100%"></div></div>
+          <div class="gap">cumprido</div>
         </article>
         <article class="card ok">
           <header>
             <h3>Linhas em agentes</h3>
             <span class="selo-ok">OK</span>
           </header>
-          <div class="numero">84.3k</div>
+          <div class="numero">86.1k</div>
           <div class="legenda">
-            <span>projeção <strong>85.8k</strong></span>
+            <span>projeção <strong>86.6k</strong></span>
             <span>meta P75 <strong>15.0k</strong></span>
           </div>
           <div class="barra"><div class="preencher" style="width:100%"></div></div>
@@ -185,6 +190,25 @@
           <div class="barra"><div class="preencher" style="width:100%"></div></div>
           <div class="gap">cumprido</div>
         </article>
+  </div>
+  
+  <div class="nota-metrica">
+    <strong>Linhas de sistema</strong> segue a definição oficial do TeamZone: só contam linhas de código que
+    <em>continuaram no arquivo</em>, fora de skill/agente/automação do Claude, e em arquivos de código
+    (sem .md, .json, .csv, .txt).
+    <br />
+    <span>escritas 114.6k</span> &rarr;
+    <span>sobreviventes 102.4k</span> &rarr;
+    <span>sistema 75.8k</span> &middot;
+    <span>agente 26.6k</span>
+    <br />
+    <span>R1 não sobreviveu 12.2k &middot; R2 foi para agente 26.6k &middot; R3 texto/dados 0</span>
+    <br />
+    <span class="nota-fraca">O card "Linhas em agentes" é o contador bruto do coletor (86.1k),
+    que conta toda linha escrita por subagente, sobrevivente ou não. O 26.6k acima é a fração
+    alinhada à definição TeamZone. O contador bruto desta métrica (linhas escritas na thread) foi 8.8k;
+    as bandas locais (P50 5.000 / P75 15.000) ainda estão calibradas sobre o número bruto — com ele a banda seria P50.
+    Por dia, "lin" mostra as linhas escritas no dia.</span>
   </div>
 
   <h2>Por dia (semana corrente)</h2>
