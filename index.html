@@ -69,7 +69,7 @@
     <div class="meta">
       <div>Rayanne Oliveira · BackOffice Franquias</div>
       <div>Semana 2026-W47 · 13/11 17h → 20/11 17h</div>
-      <div>Atualizado 13/11/2026 19:50 · 1% da semana rodado</div>
+      <div>Atualizado 13/11/2026 20:15 · 1% da semana rodado</div>
     </div>
   </header>
 
@@ -91,39 +91,39 @@
             <h3>Tokens de saída</h3>
             <span class="selo-falha">FALHA</span>
           </header>
-          <div class="numero">12.1k</div>
+          <div class="numero">64.4k</div>
           <div class="legenda">
-            <span>projeção <strong>84.6k</strong></span>
+            <span>projeção <strong>450.6k</strong></span>
             <span>meta P75 <strong>15.00M</strong></span>
           </div>
           <div class="barra"><div class="preencher" style="width:0%"></div></div>
-          <div class="gap">faltam 14.99M</div>
+          <div class="gap">faltam 14.94M</div>
         </article>
         <article class="card falha">
           <header>
             <h3>Sessões iniciadas</h3>
             <span class="selo-falha">FALHA</span>
           </header>
-          <div class="numero">0</div>
+          <div class="numero">3</div>
           <div class="legenda">
-            <span>projeção <strong>0</strong></span>
+            <span>projeção <strong>21</strong></span>
             <span>meta P75 <strong>84</strong></span>
           </div>
-          <div class="barra"><div class="preencher" style="width:0%"></div></div>
-          <div class="gap">faltam 84</div>
+          <div class="barra"><div class="preencher" style="width:3%"></div></div>
+          <div class="gap">faltam 81</div>
         </article>
         <article class="card falha">
           <header>
             <h3>Mensagens</h3>
             <span class="selo-falha">FALHA</span>
           </header>
-          <div class="numero">9</div>
+          <div class="numero">43</div>
           <div class="legenda">
-            <span>projeção <strong>63</strong></span>
+            <span>projeção <strong>301</strong></span>
             <span>meta P75 <strong>600</strong></span>
           </div>
-          <div class="barra"><div class="preencher" style="width:1%"></div></div>
-          <div class="gap">faltam 591</div>
+          <div class="barra"><div class="preencher" style="width:7%"></div></div>
+          <div class="gap">faltam 557</div>
         </article>
         <article class="card falha">
           <header>
@@ -192,9 +192,23 @@
         </article>
   </div>
   
-  <div class="nota-metrica nota-fraca">
-    <strong>Linhas de sistema</strong> (definição TeamZone) não pôde ser calculada nesta rodada;
-    o painel mostra o contador bruto do coletor.
+  <div class="nota-metrica">
+    <strong>Linhas de sistema</strong> segue a definição oficial do TeamZone: só contam linhas de código que
+    <em>continuaram no arquivo</em>, fora de skill/agente/automação do Claude, e em arquivos de código
+    (sem .md, .json, .csv, .txt).
+    <br />
+    <span>escritas 0</span> &rarr;
+    <span>sobreviventes 0</span> &rarr;
+    <span>sistema 0</span> &middot;
+    <span>agente 0</span>
+    <br />
+    <span>R1 não sobreviveu 0 &middot; R2 foi para agente 0 &middot; R3 texto/dados 0</span>
+    <br />
+    <span class="nota-fraca">O card "Linhas em agentes" é o contador bruto do coletor (0),
+    que conta toda linha escrita por subagente, sobrevivente ou não. O 0 acima é a fração
+    alinhada à definição TeamZone. O contador bruto desta métrica (linhas escritas na thread) foi 0;
+    as bandas locais (P50 5.000 / P75 15.000) ainda estão calibradas sobre o número bruto — com ele a banda seria — abaixo de P25.
+    Por dia, "lin" mostra as linhas escritas no dia.</span>
   </div>
 
   <h2>Por dia (semana corrente)</h2>
@@ -202,9 +216,9 @@
     
         <div class="dia ativo">
           <div class="dia-rotulo">fri 13/11</div>
-          <div class="dia-metrica"><span>tok</span><strong>12.1k</strong></div>
-          <div class="dia-metrica"><span>sess</span><strong>0</strong></div>
-          <div class="dia-metrica"><span>msg</span><strong>9</strong></div>
+          <div class="dia-metrica"><span>tok</span><strong>64.4k</strong></div>
+          <div class="dia-metrica"><span>sess</span><strong>3</strong></div>
+          <div class="dia-metrica"><span>msg</span><strong>43</strong></div>
           <div class="dia-metrica"><span>lin</span><strong>0</strong></div>
         </div>
         <div class="dia vazio">
